@@ -1,0 +1,155 @@
+/* calendar style */
+
+#calendarDiv {
+	display: block;
+	display: none;
+	position: relative;
+	border: 1px solid #777;
+	font-family: arial, "lucida console", sans-serif;
+	
+}
+#calendarDiv a {
+	cursor: pointer;	
+}
+
+#calendar {
+	background: #ddd;
+	clear: both;
+	text-align: center;
+	font-size: 105%;
+}
+#calendar, #linksTable {
+	width: 180px;
+}
+#calendar .calendarHeader {
+	background: #AAAAAA;
+	border-bottom: 1px solid #444;
+	color: #000000;
+}
+#calendar .weekDaysTitleRow {
+	font-weight: bold;
+	font-size:13;	
+	background: #eeeeee;
+	color: #034895;
+}
+#calendar .weekDaysRow {
+	font-size:13;	
+	background: #fff;
+	color: #666;
+}
+#calendar .weekDaysCell {
+	color: #000;
+	border: 1px solid #ddd;
+}
+#calendar .weekDaysCellOver {
+	background: #fff;
+	border: 1px solid #777;
+}
+#closeCalender {
+	position: absolute;
+	right: 0;
+	bottom: -18;
+	margin-bottom: 1px;
+	display: block;
+	padding: 2px;
+	cursor: pointer;
+	font-size: 60%;
+	background-color:#FFFFFF;
+}
+#closeCalender:hover {
+	background: #034895;
+	color: #fff;
+}
+#linksTable {
+	background:#034895;
+}
+#linksTable a {
+	display: block;
+	color: #fff;
+	letter-spacing: 1px;
+	font-weight: bold;
+	font-size: 80%;
+	padding: 2px 5px;
+	background:#034895;
+}
+#linksTable a:hover {
+	background: #ddd;
+	color: #333;
+}
+#prevMonth {
+	float: left;
+}
+#nextMonth {
+	float: right;
+}
+#today {
+	background: #999;
+}
+
+/* Demo Page Style Remove whats below, its just for show. */
+
+
+
+/* calendar style */
+
+#calendarDiv2 {
+	display: block;
+	display: none;
+	position: relative;
+	border: 1px solid #777;
+	font-family: arial, "lucida console", sans-serif;
+	
+}
+#calendarDiv2 a {
+	cursor: pointer;	
+}
+
+#calendar2 {
+	background: #ddd;
+	clear: both;
+	text-align: center;
+	font-size: 105%;
+}
+#calendar2, #linksTable {
+	width: 180px;
+}
+#calendar2 .calendarHeader2 {
+	background: #AAAAAA;
+	border-bottom: 1px solid #444;
+	color: #000000;
+}
+#calendar2 .weekDaysTitleRow {
+	font-weight: bold;
+	font-size:13;	
+	background: #eeeeee;
+	color: #034895;
+}
+#calendar2 .weekDaysRow {
+	font-size:13;	
+	background: #fff;
+	color: #666;
+}
+#calendar2 .weekDaysCell {
+	color: #000;
+	border: 1px solid #ddd;
+}
+#calendar2 .weekDaysCellOver {
+	background: #fff;
+	border: 1px solid #777;
+}
+#closeCalender2 {
+	position: absolute;
+	right: 0;
+	bottom: -18;
+	margin-bottom: 1px;
+	display: block;
+	padding: 2px;
+	cursor: pointer;
+	font-size: 60%;
+	background-color:#FFFFFF;
+
+}
+#closeCalender2:hover {
+	background: #034895;
+	color: #fff;
+}

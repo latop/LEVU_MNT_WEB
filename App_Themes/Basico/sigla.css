@@ -1,0 +1,336 @@
+﻿body
+{
+	font-family: Verdana, Sans-Serif;
+	color: #000000;
+}
+
+div.Ficha fieldset
+{
+	width: 70em;
+	margin: 20px 0 0 50px;
+	text-align: left;
+	white-space: nowrap;
+	font-size: 0.75em;
+}
+
+div.Ficha div
+{
+	margin: 8px 0 8px 1em;
+}
+
+div.Ficha div .ConteudoFixo
+{
+	font-size: inherit;
+}
+
+div.Ficha div .ConteudoEditavel
+{
+	font-size: inherit;
+	background-color: #FFFFCC;
+}
+
+div.Ficha div .ConteudoEditavel:focus
+{
+	border: groove 2px #AAAAAA;
+}
+
+div.Ficha div .ConteudoEditavel:hover
+{
+	border: groove 2px #DDDDDD;
+}
+
+div.Ficha div .Rotulo
+{
+	margin-left: 2em;
+}
+
+div.Ficha div .PrimeiraColuna
+{
+	display: inline-block;
+	text-align: right;
+	width: 9em;
+}
+
+div.Ficha div .ColunaRotuloXXPequeno
+{
+	display: inline-block;
+	text-align: right;
+	width: 3em;
+}
+
+div.Ficha div .ColunaRotuloXPequeno
+{
+	display: inline-block;
+	text-align: right;
+	width: 6em;
+}
+
+div.Ficha div .ColunaRotuloPequeno
+{
+	display: inline-block;
+	text-align: right;
+	width: 9em;
+}
+
+div.Ficha div .ColunaRotuloMedio
+{
+	display: inline-block;
+	text-align: right;
+	width: 12em;
+}
+
+div.Ficha div .ColunaRotuloGrande
+{
+	display: inline-block;
+	text-align: right;
+	width: 16em;
+}
+
+div.Ficha div .ColunaTextoXPequeno
+{
+	display: inline-block;
+	text-align: left;
+	width: 6em;
+}
+
+div.Ficha div .ColunaTextoPequeno
+{
+	display: inline-block;
+	text-align: left;
+	width: 8em;
+}
+
+div.Ficha div .ColunaTextoMedio
+{
+	display: inline-block;
+	text-align: left;
+	width: 12em;
+}
+
+div.Ficha div .ColunaTextoGrande
+{
+	display: inline-block;
+	text-align: left;
+	width: 16em;
+}
+
+div.Ficha textarea
+{
+	vertical-align: top;
+}
+
+div.btn, p.btn
+{
+	width: 65em;
+	margin-left: 50px;
+	text-align: center;
+	white-space: nowrap;
+	font-size: 0.75em;
+}
+
+div.btn input.btnPequeno, p.btn input.btnPequeno
+{
+	width: 6em;
+	font-size: inherit;
+}
+
+div.btn input.btnMedio, p.btn input.btnMedio
+{
+	width: 10em;
+	font-size: inherit;
+}
+
+div.btn input.btnXXGrande, p.btn input.btnXXGrande
+{
+	width: 25em;
+	font-size: inherit;
+}
+
+.txtXXXXXPequeno
+{
+	width: 2em;
+}
+
+.txtXXXXPequeno
+{
+	width: 3em;
+}
+
+.txtXXXPequeno
+{
+	width: 4em;
+}
+
+.txtXXPequeno
+{
+	width: 6em;
+}
+
+.txtXPequeno
+{
+	width: 10em;
+}
+
+.txtPequeno
+{
+	width: 15em;
+}
+
+.txtMedio
+{
+	width: 20em;
+}
+
+.txtGrande
+{
+	width: 29em;
+}
+
+.txtXGrande
+{
+	width: 40em;
+}
+
+.txtXXGrande
+{
+	width: 51em;
+}
+
+#TituloPagina
+{
+	font-size: 1.2em;
+	font-weight: bold;
+	white-space: normal;
+}
+
+#Header
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 92px;
+	width: 100%;
+	white-space: nowrap;
+}
+
+#Menu
+{
+	position: absolute;
+	top: 92px;
+	left: 0;
+	right: 0;
+	height: 31px;
+	padding-left: 6px;
+	padding-top: 3px;
+	margin: 0 2px 0 0;
+	min-width: 650px;
+	background-image: url(../../Images/center_tile.gif);
+	z-index: 9999;
+}
+
+#Content
+{
+	position: absolute;
+	top: 125px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.menuDinamico
+{
+	z-index: 9999;
+}
+
+div.Listagem
+{
+	margin: 20px 0 0 50px;
+	white-space: nowrap;
+	font-size: 0.7em;
+}
+
+div.Listagem td {
+    white-space: normal;
+}
+
+div.Listagem th
+{
+	font-size: 1.1em;
+}
+
+div.Listagem caption
+{
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+div.Listagem h3
+{
+	font-size: 1.2em;
+	text-align: left;
+	margin: 0 0 0 25em;
+}
+
+div.InformacoesGerais
+{
+	width: 70em;
+	margin: 20px 0 0 50px;
+	text-align: left;
+	white-space: nowrap;
+	font-size: 0.8em;
+}
+
+div.InformacoesGerais2 {
+    width: 70em;
+    margin: 20px 0 0 50px;
+    text-align: left;
+    white-space: normal;
+    font-size: 0.8em;
+}
+
+div.InformacoesGerais .Rotulo
+{
+	font-weight: bold;
+}
+
+div.Relatorio
+{
+	min-width: 760px;
+	margin: 20px 10px 0 10px;
+	text-align: left;
+	white-space: nowrap;
+	font-size: 0.8em;
+}
+
+.txtUpperCase
+{
+	text-transform: uppercase;
+}
+
+.txtBold
+{
+	font-weight: bold;
+}
+
+.txtAlignRight
+{
+	text-align: right;
+}
+
+#AjaxCarregando
+{
+	font-size: 0.8em;
+	padding: 0;
+	margin: 0 0 0 20px;
+	vertical-align: middle;
+}
+
+.Invisivel
+{
+	visibility: hidden;
+}
+
+.Visivel
+{
+	visibility: visible;
+}

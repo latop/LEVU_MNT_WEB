@@ -1,0 +1,152 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Tripulantes.master.cs" Inherits="SIGLA.Web.Tripulantes.Tripulantes" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="shortcut icon" href="~/Images/favicon.ico" type="image/x-icon" />
+
+    <script src="../Scripts/jquery-3.6.0.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Header -->
+        <div id="Header">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td align="left" valign="middle" width="35%">
+                        <asp:Image ID="imgLogoEmpresa" runat="server" AlternateText="Marca da Empresa"
+                            ImageUrl="~/ASP/imagens/logo_empresa.gif" />
+                    </td>
+                    <td align="center" width="30%">
+                        <asp:ContentPlaceHolder ID="cphTituloPagina" runat="server"></asp:ContentPlaceHolder>
+                    </td>
+                    <td align="right" valign="top" width="35%">
+                        <a href="http://www.latop.com.br">
+                            <asp:Image ID="imgSigla" runat="server" AlternateText="SIGLA"
+                                ImageUrl="~/Images/sigla.gif" />
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Menu -->
+            <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="Home.aspx">Home</a>
+                    </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="escala" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <%=Resources.Resources.Menu_Escala%>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div runat="server" id="divEscalaPublicada">
+                            <a class="dropdown-item" href="Escala.aspx?flgestado=P"><%=Resources.Resources.Menu_EscalaPublicada%></a>
+                        </div>
+                      <a class="dropdown-item" href="Escala.aspx?flgestado=E"><%=Resources.Resources.Menu_EscalaExecucaoAtiva%></a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="diaria" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <%=Resources.Resources.Menu_Diaria%>
+                    </a>
+                    <div class="dropdown-menu">
+                      <div runat="server" id="divDiariaPublicada">
+                        <a class="dropdown-item" href="Diaria.aspx?flgestado=P"><%=Resources.Resources.Menu_BaseadaEscalaPublicada%></a>
+                      </div>
+                      <a class="dropdown-item" href="Diaria.aspx?flgestado=E"><%=Resources.Resources.Menu_BaseadaEscalaExecutada%></a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="PedidoFolga.aspx"><%=Resources.Resources.Menu_PedidoFolga%></a>
+                  </li>
+
+                  <li class="nav-item dropdown" runat="server" id="divControle">
+                    <a class="nav-link dropdown-toggle" href="#" id="controle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <%=Resources.Resources.Menu_Controle%>
+                    </a>
+                    <div class="dropdown-menu">
+                      <div runat="server" id="divControleKmPublicada">
+                        <a class="dropdown-item" href="PagamentoKm.aspx?tipo=P"><%=Resources.Resources.Menu_Controle_QuilometragemPublicada%></a>
+                      </div>
+                      <div runat="server" id="divControleKmExecutada">
+                          <a class="dropdown-item" href="PagamentoKm.aspx?tipo=E"><%=Resources.Resources.Menu_Controle_QuilometragemExecutada%></a>
+                      </div>
+                      <div runat="server" id="divControleHrPublicada">
+                        <a class="dropdown-item" href="PagamentoHr.aspx?tipo=P"><%=Resources.Resources.Menu_Controle_HorasPublicadas%></a>
+                      </div>
+                      <div runat="server" id="divControleHrExecutada">
+                          <a class="dropdown-item" id="divControleHrExecutada" href="PagamentoHr.aspx?tipo=E"><%=Resources.Resources.Menu_Controle_HorasExecutadas%></a>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="ferramentas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <%=Resources.Resources.Menu_Ferramentas%>
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="DocumentosTripulantes.aspx"><%=Resources.Resources.Menu_DocumentosTripulacao%></a>
+                      <!--<a class="dropdown-item" href="~/ASP/avaliacaodesempenho.asp"><%=Resources.Resources.Menu_AvaliacaoDesempenho%></a>-->
+                      <a class="dropdown-item" href="SolicitacaoPasse.aspx"><%=Resources.Resources.Menu_SolicitacaoPasse%></a>
+                      <a class="dropdown-item" href="CadastroPessoal.aspx"><%=Resources.Resources.Menu_CadastroPessoal%></a>
+                      <a class="dropdown-item" href="RelatorioHorasVooMensais.aspx"><%=Resources.Resources.Menu_RelatorioHorasVooMensais%></a>
+                      <a class="dropdown-item" href="../AlterarSenha.aspx"><%=Resources.Resources.Menu_AlterarSenha%></a>
+                      <button type="button" class="btn ml-2" style="border: 0; background-color:white; color:none" data-toggle="modal" data-target="#VersaoAtual">
+                        <%=Resources.Resources.Menu_VersaoAtual%>
+                      </button>
+                    </div>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="../Logout.aspx"><%=Resources.Resources.Menu_Sair%></a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="VersaoAtual" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">SIGLA</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Sistema Integrado de Gestão de Linhas Aéreas
+                <br />
+                        <%=Resources.Resources.Menu_Versao%>
+                        <%= Session["VERSAO"].ToString()%>
+                        <br />
+                        <%=Resources.Resources.Menu_Inpi%>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><%=Resources.Resources.AlterarSenha_Confirmar%></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Content -->
+        <div id="Content" class="container mt-5">
+            <asp:ContentPlaceHolder ID="cphConteudoPagina" runat="server" />
+        </div>
+    </form>
+</body>
+</html>

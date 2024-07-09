@@ -1,0 +1,1062 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlterarSenha_Cancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="AlterarSenha_ConfirmacaoAlteracao" xml:space="preserve">
+    <value>Does it confirm the password change?</value>
+  </data>
+  <data name="AlterarSenha_ConfirmacaoSenha" xml:space="preserve">
+    <value>Password Confirmation:</value>
+  </data>
+  <data name="AlterarSenha_ConfirmacaoSenhaInvalida" xml:space="preserve">
+    <value>The new password and password confirmation fields must be filled in with the same value!</value>
+  </data>
+  <data name="AlterarSenha_ConfirmacaoSenhaObrigatoria" xml:space="preserve">
+    <value>Fill in the Password confirmation information, please!</value>
+  </data>
+  <data name="AlterarSenha_Confirmar" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="AlterarSenha_ErroAlteracaoSenha" xml:space="preserve">
+    <value>Error changing password. Check the password entered!</value>
+  </data>
+  <data name="AlterarSenha_NovaSenha" xml:space="preserve">
+    <value>New Password:</value>
+  </data>
+  <data name="AlterarSenha_NovaSenhaObrigatoria" xml:space="preserve">
+    <value>Fill in the New Password information, please!</value>
+  </data>
+  <data name="AlterarSenha_SenhaAlteradaSucesso" xml:space="preserve">
+    <value>Password changed successfully!</value>
+  </data>
+  <data name="AlterarSenha_SenhaAtual" xml:space="preserve">
+    <value>Current password:</value>
+  </data>
+  <data name="AlterarSenha_SenhaAtualInvalida" xml:space="preserve">
+    <value>Invalid password.\nPlease check and try again, please!</value>
+  </data>
+  <data name="AlterarSenha_SenhaAtualObrigatoria" xml:space="preserve">
+    <value>Fill in the current password information, please!</value>
+  </data>
+  <data name="AlterarSenha_SenhaInicialInvalida" xml:space="preserve">
+    <value>Initial password cannot be "sigla"!</value>
+  </data>
+  <data name="AlterarSenha_Titulo" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="CadastroPessoal_Admissao" xml:space="preserve">
+    <value>Admission:</value>
+  </data>
+  <data name="CadastroPessoal_Agencia" xml:space="preserve">
+    <value>Branch:</value>
+  </data>
+  <data name="CadastroPessoal_Bairro" xml:space="preserve">
+    <value>District:</value>
+  </data>
+  <data name="CadastroPessoal_Banco" xml:space="preserve">
+    <value>Bank:</value>
+  </data>
+  <data name="CadastroPessoal_Celular" xml:space="preserve">
+    <value>Mobile:</value>
+  </data>
+  <data name="CadastroPessoal_Cep" xml:space="preserve">
+    <value>ZIP Code:</value>
+  </data>
+  <data name="CadastroPessoal_Cidade" xml:space="preserve">
+    <value>City:</value>
+  </data>
+  <data name="CadastroPessoal_CodigoDac" xml:space="preserve">
+    <value>Civil Aviat. Code:</value>
+  </data>
+  <data name="CadastroPessoal_CodigoLicenca" xml:space="preserve">
+    <value>License Code:</value>
+  </data>
+  <data name="CadastroPessoal_ContaCorrente" xml:space="preserve">
+    <value>Current Account:</value>
+  </data>
+  <data name="CadastroPessoal_Cpf" xml:space="preserve">
+    <value>National ID:</value>
+  </data>
+  <data name="CadastroPessoal_Desligamento" xml:space="preserve">
+    <value>Termination:</value>
+  </data>
+  <data name="CadastroPessoal_Email" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="CadastroPessoal_Endereco" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="CadastroPessoal_Feminino" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="CadastroPessoal_Grupo" xml:space="preserve">
+    <value>Personal Data</value>
+  </data>
+  <data name="CadastroPessoal_Identidade" xml:space="preserve">
+    <value>ID:</value>
+  </data>
+  <data name="CadastroPessoal_Licenca" xml:space="preserve">
+    <value>License:</value>
+  </data>
+  <data name="CadastroPessoal_Masculino" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="CadastroPessoal_Matricula" xml:space="preserve">
+    <value>Registry:</value>
+  </data>
+  <data name="CadastroPessoal_Nacionalidade" xml:space="preserve">
+    <value>Nationality:</value>
+  </data>
+  <data name="CadastroPessoal_Nascimento" xml:space="preserve">
+    <value>Birth:</value>
+  </data>
+  <data name="CadastroPessoal_Nome" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="CadastroPessoal_NomeGuerra" xml:space="preserve">
+    <value>Crew ID:</value>
+  </data>
+  <data name="CadastroPessoal_Observacao" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="CadastroPessoal_OperacaoRealizadaSucesso" xml:space="preserve">
+    <value>Operation performed successfully.</value>
+  </data>
+  <data name="CadastroPessoal_Pais" xml:space="preserve">
+    <value>Country:</value>
+  </data>
+  <data name="CadastroPessoal_PaisPassaporte" xml:space="preserve">
+    <value>Passport Country:</value>
+  </data>
+  <data name="CadastroPessoal_Passaporte" xml:space="preserve">
+    <value>Passport:</value>
+  </data>
+  <data name="CadastroPessoal_Senioridade" xml:space="preserve">
+    <value>Seniority:</value>
+  </data>
+  <data name="CadastroPessoal_Sexo" xml:space="preserve">
+    <value>Gender:</value>
+  </data>
+  <data name="CadastroPessoal_Telefone" xml:space="preserve">
+    <value>Telephone:</value>
+  </data>
+  <data name="CadastroPessoal_Titulo" xml:space="preserve">
+    <value>Crew Registration</value>
+  </data>
+  <data name="CadastroPessoal_UF" xml:space="preserve">
+    <value>State:</value>
+  </data>
+  <data name="CadastroPessoal_ValidadePassaporte" xml:space="preserve">
+    <value>Passport Validity:</value>
+  </data>
+  <data name="CadastroPessoal_ValidadePassaporteErro" xml:space="preserve">
+    <value>The passport validity field can only be filled with valid dates in the format (dd/mm/yyyy). This field is not mandatory.</value>
+  </data>
+  <data name="CadastroPessoal_Voltar" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="ControleHr_Titulo" xml:space="preserve">
+    <value>Hours Report -</value>
+  </data>
+  <data name="ControleKm_Titulo" xml:space="preserve">
+    <value>Km Report</value>
+  </data>
+  <data name="Controle_Atividades" xml:space="preserve">
+    <value>Activity</value>
+  </data>
+  <data name="Controle_AtividadesComPagamento" xml:space="preserve">
+    <value>Payment Activities</value>
+  </data>
+  <data name="Controle_AtividadesInstrucaoCheque" xml:space="preserve">
+    <value>Instruction and Check Payment Activities</value>
+  </data>
+  <data name="Controle_Cheg" xml:space="preserve">
+    <value>ARR.</value>
+  </data>
+  <data name="Controle_Data" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Controle_DiarioBordo" xml:space="preserve">
+    <value>Logbook</value>
+  </data>
+  <data name="Controle_Diu" xml:space="preserve">
+    <value>Diu.</value>
+  </data>
+  <data name="Controle_ED" xml:space="preserve">
+    <value>E. D.</value>
+  </data>
+  <data name="Controle_EN" xml:space="preserve">
+    <value>E. N.</value>
+  </data>
+  <data name="Controle_Etapa" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="Controle_Executada" xml:space="preserve">
+    <value>Executed</value>
+  </data>
+  <data name="Controle_Extra" xml:space="preserve">
+    <value>Extra</value>
+  </data>
+  <data name="Controle_Fim" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="Controle_Fim_DataInvalida" xml:space="preserve">
+    <value>The end date field can only be filled with a valid date in the format (dd/mm/yyyy).</value>
+  </data>
+  <data name="Controle_Fim_DataObrigatoria" xml:space="preserve">
+    <value>Fill in the End date information, please.</value>
+  </data>
+  <data name="Controle_Funcao" xml:space="preserve">
+    <value>Function</value>
+  </data>
+  <data name="Controle_Horas" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="Controle_HorasAtividades" xml:space="preserve">
+    <value>Hours of Activity</value>
+  </data>
+  <data name="Controle_HorasVoo" xml:space="preserve">
+    <value>Flight Hours</value>
+  </data>
+  <data name="Controle_HorasVooOperadas" xml:space="preserve">
+    <value>Operated Flight Hours</value>
+  </data>
+  <data name="Controle_Inicio" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Controle_Inicio_DataInvalida" xml:space="preserve">
+    <value>The start date field can only be filled in with a valid date in the format (dd/mm/yyyy).</value>
+  </data>
+  <data name="Controle_Inicio_DataObrigatoria" xml:space="preserve">
+    <value>Fill in the Start date information, please.</value>
+  </data>
+  <data name="Controle_Km" xml:space="preserve">
+    <value>Km</value>
+  </data>
+  <data name="Controle_KmAtividades" xml:space="preserve">
+    <value>Km Activities</value>
+  </data>
+  <data name="Controle_KmReserva" xml:space="preserve">
+    <value>Reserve Km</value>
+  </data>
+  <data name="Controle_KmSobreAviso" xml:space="preserve">
+    <value>Safety Km</value>
+  </data>
+  <data name="Controle_KmVoo" xml:space="preserve">
+    <value>Flight Km</value>
+  </data>
+  <data name="Controle_Not" xml:space="preserve">
+    <value>Nig.</value>
+  </data>
+  <data name="Controle_Part" xml:space="preserve">
+    <value>Dep.</value>
+  </data>
+  <data name="Controle_Pesquisar" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Controle_Prog" xml:space="preserve">
+    <value>Sched.</value>
+  </data>
+  <data name="Controle_Publicada" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="Controle_Quilometragem" xml:space="preserve">
+    <value>Km</value>
+  </data>
+  <data name="Controle_TempoSolo" xml:space="preserve">
+    <value>Solo time</value>
+  </data>
+  <data name="Controle_TipoAtividade" xml:space="preserve">
+    <value>Activity Type</value>
+  </data>
+  <data name="Controle_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Controle_Tripulante" xml:space="preserve">
+    <value>Crew</value>
+  </data>
+  <data name="Controle_Voo" xml:space="preserve">
+    <value>Flight</value>
+  </data>
+  <data name="Diaria_ListagemAeronave" xml:space="preserve">
+    <value>Aircraft</value>
+  </data>
+  <data name="Diaria_ListagemApresentacao" xml:space="preserve">
+    <value>Presentation</value>
+  </data>
+  <data name="Diaria_ListagemData" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Diaria_ListagemDestino" xml:space="preserve">
+    <value>Dest</value>
+  </data>
+  <data name="Diaria_ListagemDiaria" xml:space="preserve">
+    <value>Meal</value>
+  </data>
+  <data name="Diaria_ListagemFimRealiz" xml:space="preserve">
+    <value>End Concluded:</value>
+  </data>
+  <data name="Diaria_ListagemObservacao" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="Diaria_ListagemOrigem" xml:space="preserve">
+    <value>Origin</value>
+  </data>
+  <data name="Diaria_ListagemProgramacao" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="Diaria_ListagemTipoDiaria" xml:space="preserve">
+    <value>Type Meal</value>
+  </data>
+  <data name="Diaria_ListagemTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Diaria_Pesquisar" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Diaria_Titulo" xml:space="preserve">
+    <value>Meal Values</value>
+  </data>
+  <data name="Diaria_TituloExecutado" xml:space="preserve">
+    <value>Meal Values [Executed]</value>
+  </data>
+  <data name="Diaria_TituloPublicado" xml:space="preserve">
+    <value>Meal Values [Published]</value>
+  </data>
+  <data name="Diaria_Tripulante" xml:space="preserve">
+    <value>Crew</value>
+  </data>
+  <data name="DocumentosTripulantes_AtualizarLista" xml:space="preserve">
+    <value>Update the list of Documents</value>
+  </data>
+  <data name="DocumentosTripulantes_Documentos" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="DocumentosTripulantes_ListaAcessos" xml:space="preserve">
+    <value>Qty. Accesses</value>
+  </data>
+  <data name="DocumentosTripulantes_ListaAgrupamento" xml:space="preserve">
+    <value>Position/Base/Fleet/Funcion</value>
+  </data>
+  <data name="DocumentosTripulantes_ListaData" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DocumentosTripulantes_ListaFiltroNaoObrigatorios" xml:space="preserve">
+    <value>Only non-mandatory</value>
+  </data>
+  <data name="DocumentosTripulantes_ListaFiltroObrigatorios" xml:space="preserve">
+    <value>Only mandatory</value>
+  </data>
+  <data name="DocumentosTripulantes_ListaFiltroObrigatoriosNaoLidos" xml:space="preserve">
+    <value>Only unread mandatory</value>
+  </data>
+  <data name="DocumentosTripulantes_ListaFiltroTodos" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="DocumentosTripulantes_ListaNome" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="DocumentosTripulantes_ListaNomeGrupo" xml:space="preserve">
+    <value>Name Group</value>
+  </data>
+  <data name="DocumentosTripulantes_ListaObrigatorio" xml:space="preserve">
+    <value>Mandatory</value>
+  </data>
+  <data name="DocumentosTripulantes_ListaTamanho" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="DocumentosTripulantes_ListaTipo" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="DocumentosTripulantes_ListaVazia" xml:space="preserve">
+    <value>There are no documents at this time</value>
+  </data>
+  <data name="DocumentosTripulantes_OrdemCrescente" xml:space="preserve">
+    <value>Ascending Order</value>
+  </data>
+  <data name="DocumentosTripulantes_OrdemDecrescente" xml:space="preserve">
+    <value>Descending Order</value>
+  </data>
+  <data name="DocumentosTripulantes_Titulo" xml:space="preserve">
+    <value>Crew Documents</value>
+  </data>
+  <data name="DocumentosTripulantes_Voltar" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Erro_SubTitulo" xml:space="preserve">
+    <value>A system error has occurred!</value>
+  </data>
+  <data name="Erro_Titulo" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="EscalaTripulantes_ListagemCargo" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="EscalaTripulantes_ListagemFuncao" xml:space="preserve">
+    <value>Function</value>
+  </data>
+  <data name="EscalaTripulantes_ListagemHorario" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="EscalaTripulantes_ListagemJornada" xml:space="preserve">
+    <value>Roster</value>
+  </data>
+  <data name="EscalaTripulantes_ListagemTripulante" xml:space="preserve">
+    <value>Crew</value>
+  </data>
+  <data name="EscalaTripulantes_Titulo" xml:space="preserve">
+    <value>Crew</value>
+  </data>
+  <data name="EscalaTripulantes_Voltar" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="EscalaTripulantes_Voo" xml:space="preserve">
+    <value>Flight:</value>
+  </data>
+  <data name="Escala_Abril" xml:space="preserve">
+    <value>April</value>
+  </data>
+  <data name="Escala_Agosto" xml:space="preserve">
+    <value>August</value>
+  </data>
+  <data name="Escala_Alterada" xml:space="preserve">
+    <value>changed</value>
+  </data>
+  <data name="Escala_AlteradaConfirmacao" xml:space="preserve">
+    <value>Crew member warned at {0}!</value>
+  </data>
+  <data name="Escala_Dezembro" xml:space="preserve">
+    <value>December</value>
+  </data>
+  <data name="Escala_Dom" xml:space="preserve">
+    <value>SUN</value>
+  </data>
+  <data name="Escala_Fevereiro" xml:space="preserve">
+    <value>February</value>
+  </data>
+  <data name="Escala_Hora" xml:space="preserve">
+    <value>Flight Hours</value>
+  </data>
+  <data name="Escala_Janeiro" xml:space="preserve">
+    <value>January</value>
+  </data>
+  <data name="Escala_Julho" xml:space="preserve">
+    <value>July</value>
+  </data>
+  <data name="Escala_Junho" xml:space="preserve">
+    <value>June</value>
+  </data>
+  <data name="Escala_Km" xml:space="preserve">
+    <value>Km</value>
+  </data>
+  <data name="Escala_ListagemAgrupamentoHr" xml:space="preserve">
+    <value>Flight Hours</value>
+  </data>
+  <data name="Escala_ListagemAgrupamentoKm" xml:space="preserve">
+    <value>Km</value>
+  </data>
+  <data name="Escala_ListagemApresentacao" xml:space="preserve">
+    <value>Present.</value>
+  </data>
+  <data name="Escala_ListagemDia" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="Escala_ListagemDiurna" xml:space="preserve">
+    <value>Diu.</value>
+  </data>
+  <data name="Escala_ListagemEdtEta" xml:space="preserve">
+    <value>ETD - ETA</value>
+  </data>
+  <data name="Escala_ListagemEspecial" xml:space="preserve">
+    <value>Special</value>
+  </data>
+  <data name="Escala_ListagemEtapas" xml:space="preserve">
+    <value>Sections</value>
+  </data>
+  <data name="Escala_ListagemNoturna" xml:space="preserve">
+    <value>Nig.</value>
+  </data>
+  <data name="Escala_ListagemProgramacao" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="Escala_ListagemSemana" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="Escala_ListagemTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Escala_Maio" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="Escala_Marco" xml:space="preserve">
+    <value>March</value>
+  </data>
+  <data name="Escala_Novembro" xml:space="preserve">
+    <value>November</value>
+  </data>
+  <data name="Escala_Outubro" xml:space="preserve">
+    <value>October</value>
+  </data>
+  <data name="escala_Pesquisar" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Escala_Qua" xml:space="preserve">
+    <value>WED</value>
+  </data>
+  <data name="Escala_Qui" xml:space="preserve">
+    <value>THU</value>
+  </data>
+  <data name="Escala_Sab" xml:space="preserve">
+    <value>SAT</value>
+  </data>
+  <data name="Escala_Seg" xml:space="preserve">
+    <value>MON</value>
+  </data>
+  <data name="Escala_Setembro" xml:space="preserve">
+    <value>September</value>
+  </data>
+  <data name="Escala_Sex" xml:space="preserve">
+    <value>FRI</value>
+  </data>
+  <data name="Escala_SubtituloExecutada" xml:space="preserve">
+    <value>Executed Individual Schedule (Airline Base Time)</value>
+  </data>
+  <data name="Escala_SubtituloPlanejada" xml:space="preserve">
+    <value>Published Individual Schedule (Airline Base Time)</value>
+  </data>
+  <data name="Escala_Ter" xml:space="preserve">
+    <value>TUE</value>
+  </data>
+  <data name="Escala_Titulo" xml:space="preserve">
+    <value>Individual Crew Schedule</value>
+  </data>
+  <data name="Escala_Tripulante" xml:space="preserve">
+    <value>Crew</value>
+  </data>
+  <data name="Home_ListaVazia" xml:space="preserve">
+    <value>No observation.</value>
+  </data>
+  <data name="Home_SubTitulo" xml:space="preserve">
+    <value>Important Notes</value>
+  </data>
+  <data name="Home_Titulo" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Menu_Sair" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Menu_VersaoAtual" xml:space="preserve">
+    <value>Current Version</value>
+  </data>
+  <data name="Menu_AlterarSenha" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="Menu_AvaliacaoDesempenho" xml:space="preserve">
+    <value>Performance Evaluation</value>
+  </data>
+  <data name="Menu_BaseadaEscalaExecutada" xml:space="preserve">
+    <value>Based on Executed Schedules</value>
+  </data>
+  <data name="Menu_BaseadaEscalaPublicada" xml:space="preserve">
+    <value>Based on Published Schedules</value>
+  </data>
+  <data name="Menu_BibliotecaEletronica" xml:space="preserve">
+    <value>Electronic Library</value>
+  </data>
+  <data name="Menu_CadastroPessoal" xml:space="preserve">
+    <value>Crew Registration</value>
+  </data>
+  <data name="Menu_ConfirmacaoSair" xml:space="preserve">
+    <value>Do you want to exit the system?</value>
+  </data>
+  <data name="Menu_ConfirmarSair" xml:space="preserve">
+    <value>Do you want to exit the system?</value>
+  </data>
+  <data name="Menu_ContatoOperacoes" xml:space="preserve">
+    <value>Operations Contact</value>
+  </data>
+  <data name="Menu_ContatoOperacoesVisualizacaoRelatos" xml:space="preserve">
+    <value>Operations Contact - View Reports</value>
+  </data>
+  <data name="Menu_Controle" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="Menu_Controle_HorasExecutadas" xml:space="preserve">
+    <value>Executed Hours</value>
+  </data>
+  <data name="Menu_Controle_HorasPublicadas" xml:space="preserve">
+    <value>Published Hours</value>
+  </data>
+  <data name="Menu_Controle_QuilometragemExecutada" xml:space="preserve">
+    <value>Executed Km</value>
+  </data>
+  <data name="Menu_Controle_QuilometragemPublicada" xml:space="preserve">
+    <value>Published Km</value>
+  </data>
+  <data name="Menu_DesempenhoFuncionalConsultarElogios" xml:space="preserve">
+    <value>Functional Performance - Consult</value>
+  </data>
+  <data name="Menu_Diaria" xml:space="preserve">
+    <value>Meal</value>
+  </data>
+  <data name="Menu_DocumentosTripulacao" xml:space="preserve">
+    <value>Crew Documents</value>
+  </data>
+  <data name="Menu_Escala" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="Menu_EscalaExecucaoAtiva" xml:space="preserve">
+    <value>Schedule in Execution (Active)</value>
+  </data>
+  <data name="Menu_EscalaPublicada" xml:space="preserve">
+    <value>Published Schedule</value>
+  </data>
+  <data name="Menu_Ferramentas" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="Menu_Inpi" xml:space="preserve">
+    <value>Registration with the INPI number: 085841</value>
+  </data>
+  <data name="Menu_PedidoFolga" xml:space="preserve">
+    <value>Day Off Request</value>
+  </data>
+  <data name="Menu_RelatorioHorasVooMensais" xml:space="preserve">
+    <value>Monthly Flight Hours Report</value>
+  </data>
+  <data name="Menu_RelatorioPrevencao" xml:space="preserve">
+    <value>Prevention Report</value>
+  </data>
+  <data name="Menu_SolicitacaoPasse" xml:space="preserve">
+    <value>Pass Request</value>
+  </data>
+  <data name="Menu_Versao" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="PedidoFolga_Alterar" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="PedidoFolga_ConfirmacaoExclusao" xml:space="preserve">
+    <value>Do you want to delete this day off order?</value>
+  </data>
+  <data name="PedidoFolga_Data" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="PedidoFolga_DataInvalida" xml:space="preserve">
+    <value>The Date field can only be filled with valid dates in the format (dd/mm/yyyy).</value>
+  </data>
+  <data name="PedidoFolga_DataObrigatoria" xml:space="preserve">
+    <value>Fill in the Date information, please</value>
+  </data>
+  <data name="PedidoFolga_ErroApi" xml:space="preserve">
+    <value>Error accessing the SIGLA API. Please try again soon. If the error persists, please contact system support.</value>
+  </data>
+  <data name="PedidoFolga_Gravar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="PedidoFolga_ListaConfirmacaoExclusao" xml:space="preserve">
+    <value>Do you confirm the deletion of that day off request?</value>
+  </data>
+  <data name="PedidoFolga_ListaData" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="PedidoFolga_ListaObservacao" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="PedidoFolga_ListaVazia" xml:space="preserve">
+    <value>No records found</value>
+  </data>
+  <data name="PedidoFolga_NovoPedido" xml:space="preserve">
+    <value>New Request</value>
+  </data>
+  <data name="PedidoFolga_NovoRegistro" xml:space="preserve">
+    <value>New Record</value>
+  </data>
+  <data name="PedidoFolga_Observacao" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="PedidoFolga_ObservacaoInvalida" xml:space="preserve">
+    <value>Fill in the Note information, please</value>
+  </data>
+  <data name="PedidoFolga_OperacaoRealizadaSucesso" xml:space="preserve">
+    <value>Operation performed successfully.</value>
+  </data>
+  <data name="PedidoFolga_OrdemCrescente" xml:space="preserve">
+    <value>Ascending Order</value>
+  </data>
+  <data name="PedidoFolga_OrdemDecrescente" xml:space="preserve">
+    <value>Ordem Decrescente</value>
+  </data>
+  <data name="PedidoFolga_Titulo" xml:space="preserve">
+    <value>Day Off Request</value>
+  </data>
+  <data name="PedidoFolga_Voltar" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="ProgramacaoTripulante_ListagemAeronave" xml:space="preserve">
+    <value>Aircraft</value>
+  </data>
+  <data name="ProgramacaoTripulante_ListagemAtividade" xml:space="preserve">
+    <value>Activity</value>
+  </data>
+  <data name="ProgramacaoTripulante_ListagemDestino" xml:space="preserve">
+    <value>Destiny</value>
+  </data>
+  <data name="ProgramacaoTripulante_ListagemEmpresa" xml:space="preserve">
+    <value>Airline</value>
+  </data>
+  <data name="ProgramacaoTripulante_ListagemFim" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="ProgramacaoTripulante_ListagemFuncao" xml:space="preserve">
+    <value>Function</value>
+  </data>
+  <data name="ProgramacaoTripulante_ListagemInicio" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ProgramacaoTripulante_ListagemLocalidade" xml:space="preserve">
+    <value>Localidade</value>
+  </data>
+  <data name="ProgramacaoTripulante_ListagemOrigem" xml:space="preserve">
+    <value>Origin</value>
+  </data>
+  <data name="ProgramacaoTripulante_ListagemPartida" xml:space="preserve">
+    <value>Dep.&amp;nbsp;Est.</value>
+  </data>
+  <data name="ProgramacaoTripulante_ListagemTipoProgramacao" xml:space="preserve">
+    <value>Schedule Type</value>
+  </data>
+  <data name="ProgramacaoTripulante_Subtitulo" xml:space="preserve">
+    <value>Crew Schedule in {0}</value>
+  </data>
+  <data name="ProgramacaoTripulante_Titulo" xml:space="preserve">
+    <value>Crew Schedule</value>
+  </data>
+  <data name="ProgramacaoTripulante_Tripulante" xml:space="preserve">
+    <value>Crew</value>
+  </data>
+  <data name="ProgramacaoTripulante_Voltar" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Abr" xml:space="preserve">
+    <value>APR</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Ago" xml:space="preserve">
+    <value>AUG</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Ano" xml:space="preserve">
+    <value>Year:</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_AnoObrigatorio" xml:space="preserve">
+    <value>Fill in the year Information, please.</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_AnoValido" xml:space="preserve">
+    <value>Fill in the year information with a valid amount, please.</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Dez" xml:space="preserve">
+    <value>DEC</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Fev" xml:space="preserve">
+    <value>FEB</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Jan" xml:space="preserve">
+    <value>JAN</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Jul" xml:space="preserve">
+    <value>JUL</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Jun" xml:space="preserve">
+    <value>JUN</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Mai" xml:space="preserve">
+    <value>MAY</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Mar" xml:space="preserve">
+    <value>MAR</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Nov" xml:space="preserve">
+    <value>NOV</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Out" xml:space="preserve">
+    <value>OCT</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Pesquisar" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Set" xml:space="preserve">
+    <value>SEP</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Titulo" xml:space="preserve">
+    <value>Monthly Flight Hours Report</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Tripulante" xml:space="preserve">
+    <value>Crew:</value>
+  </data>
+  <data name="RelatorioHorasVooMensais_Voltar" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="SolicitacaoPasse_Cancelamento" xml:space="preserve">
+    <value>Cancellation</value>
+  </data>
+  <data name="SolicitacaoPasse_CancelarConfirmacao" xml:space="preserve">
+    <value>Do you really want to cancel the pass for flight {0}, from {1}, from {2} to {3}?</value>
+  </data>
+  <data name="SolicitacaoPasse_CancelarErro" xml:space="preserve">
+    <value>There was an error canceling the pass</value>
+  </data>
+  <data name="SolicitacaoPasse_CancelarSucesso" xml:space="preserve">
+    <value>Pass canceled successfully.</value>
+  </data>
+  <data name="SolicitacaoPasse_Cargo" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="SolicitacaoPasse_Data" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="SolicitacaoPasse_DataInvalida" xml:space="preserve">
+    <value>The flight date field can only be filled with valid dates in the format (dd/mm/yyyy)</value>
+  </data>
+  <data name="SolicitacaoPasse_DataVoo" xml:space="preserve">
+    <value>Flight Date:</value>
+  </data>
+  <data name="SolicitacaoPasse_DataVooInvalida" xml:space="preserve">
+    <value>Please fill in the flight date with a valid date in the format (dd/mm/yyyy), greater than or equal to today.</value>
+  </data>
+  <data name="SolicitacaoPasse_DataVooObrigatorio" xml:space="preserve">
+    <value>Please inform the flight date.</value>
+  </data>
+  <data name="SolicitacaoPasse_De" xml:space="preserve">
+    <value>In</value>
+  </data>
+  <data name="SolicitacaoPasse_DeObrigatorio" xml:space="preserve">
+    <value>Please select the airport of origin</value>
+  </data>
+  <data name="SolicitacaoPasse_Destino" xml:space="preserve">
+    <value>Destiny</value>
+  </data>
+  <data name="SolicitacaoPasse_Enviar" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="SolicitacaoPasse_Limpar" xml:space="preserve">
+    <value>Clean</value>
+  </data>
+  <data name="SolicitacaoPasse_ListagemDescricao" xml:space="preserve">
+    <value>List with requests made since</value>
+  </data>
+  <data name="SolicitacaoPasse_NomeGuerra" xml:space="preserve">
+    <value>Crew ID</value>
+  </data>
+  <data name="SolicitacaoPasse_NovoPasse" xml:space="preserve">
+    <value>New Pass</value>
+  </data>
+  <data name="SolicitacaoPasse_NumeroVoo" xml:space="preserve">
+    <value>Flight number</value>
+  </data>
+  <data name="SolicitacaoPasse_ObsEmbarque" xml:space="preserve">
+    <value>Note: Boarding subject to space on the aircraft</value>
+  </data>
+  <data name="SolicitacaoPasse_Observacao" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="SolicitacaoPasse_OperacaoRealizadaSucesso" xml:space="preserve">
+    <value>Operation performed successfully.</value>
+  </data>
+  <data name="SolicitacaoPasse_Origem" xml:space="preserve">
+    <value>Origin</value>
+  </data>
+  <data name="SolicitacaoPasse_Para" xml:space="preserve">
+    <value>/ To:</value>
+  </data>
+  <data name="SolicitacaoPasse_ParaObrigatorio" xml:space="preserve">
+    <value>Please select your destination airport</value>
+  </data>
+  <data name="SolicitacaoPasse_Titulo" xml:space="preserve">
+    <value>Pass Request</value>
+  </data>
+  <data name="SolicitacaoPasse_Tripulante" xml:space="preserve">
+    <value>Crew</value>
+  </data>
+  <data name="SolicitacaoPasse_Voltar" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="SolicitacaoPasse_Voo" xml:space="preserve">
+    <value>Flight</value>
+  </data>
+  <data name="SolicitacaoPasse_VooNumerico" xml:space="preserve">
+    <value>The flight number field is numeric only.</value>
+  </data>
+  <data name="SolicitacaoPasse_VooObrigatorio" xml:space="preserve">
+    <value>Please inform your flight number.</value>
+  </data>
+  <data name="VoosCPA_DateBSB" xml:space="preserve">
+    <value>BSBDate</value>
+  </data>
+  <data name="VoosCPA_FlightNumber" xml:space="preserve">
+    <value>FlightNumber</value>
+  </data>
+  <data name="VoosCPA_Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="VoosCPA_Situation" xml:space="preserve">
+    <value>Situation</value>
+  </data>
+  <data name="VoosCPA_Titulo" xml:space="preserve">
+    <value>CPA Flight:</value>
+  </data>
+  <data name="Login_gif" xml:space="preserve">
+    <value>asp/imagens/asp_login_3.gif</value>
+  </data>
+  <data name="Btn_Entrar" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="Login_Aeroporto" xml:space="preserve">
+    <value>Airport</value>
+  </data>
+  <data name="Login_Funcionarios" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="Login_Tripulantes" xml:space="preserve">
+    <value>Crew Members</value>
+  </data>
+  <data name="Login_Dominio" xml:space="preserve">
+    <value>Domain</value>
+  </data>
+  <data name="Login_Erro" xml:space="preserve">
+    <value>Invalid user or password!</value>
+  </data>
+  <data name="Login_Esqueci" xml:space="preserve">
+    <value>Forgot password</value>
+  </data>
+  <data name="Login_Senha" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Login_Usuario" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="Escala_ListagemCorte" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="Escala_ListagemResumo" xml:space="preserve">
+    <value>Schedule Summary</value>
+  </data>
+</root>

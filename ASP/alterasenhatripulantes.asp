@@ -1,0 +1,5 @@
+<%
+
+	Response.Redirect("../alterarsenha.aspx")
+
+%>

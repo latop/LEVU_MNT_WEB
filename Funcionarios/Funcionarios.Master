@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Funcionarios.master.cs" Inherits="SIGLA.Web.Funcionarios.Funcionarios" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+	<link rel="shortcut icon" href="~/Images/favicon.ico" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+		<!-- Header -->
+		<div id="Header">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td align="left" valign="middle" width="35%">
+						<asp:Image id="imgLogoEmpresa" runat="server" AlternateText="Marca da Empresa" 
+							ImageUrl="~/ASP/imagens/logo_empresa.gif" />
+					</td>
+					<td align="center" width="30%">
+						<asp:ContentPlaceHolder id="cphTituloPagina" runat="server"></asp:ContentPlaceHolder>
+					</td>
+					<td align="right" valign="top" width="35%">
+						<a href="http://www.latop.com.br">
+							<asp:Image id="imgSigla" runat="server" AlternateText="SIGLA" 
+								ImageUrl="~/Images/sigla.gif" />
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- Menu -->
+		<div id="Menu">
+			<asp:Menu ID="mnuFuncionarios" runat="server" 
+				Orientation="Horizontal" 
+				Font-Names="Arial" Font-Size="10px" ForeColor="#555555" 
+				onmenuitemclick="mnuFuncionarios_MenuItemClick" 
+				onmenuitemdatabound="mnuFuncionarios_MenuItemDataBound">
+				<StaticSelectedStyle BackColor="Transparent" />
+				<StaticMenuItemStyle BackColor="Transparent" HorizontalPadding="5px" VerticalPadding="5px" />
+				<StaticHoverStyle BackColor="#DADADA" ForeColor="#CC0000" />
+				<DynamicHoverStyle BackColor="#DADADA" ForeColor="#CC0000" Font-Size="11px" />
+				<DynamicMenuStyle BackColor="#F7F7F7" Font-Size="11px" CssClass="menuDinamico" />
+				<DynamicSelectedStyle BackColor="#F7F7F7" Font-Size="11px" />
+				<DynamicMenuItemStyle HorizontalPadding="15px" VerticalPadding="8px" Font-Size="11px" />
+			</asp:Menu>
+		</div>
+		<!-- Content -->
+		<div id="Content">
+			<asp:ContentPlaceHolder id="cphConteudoPagina" runat="server" />
+		</div>
+    </form>
+</body>
+</html>

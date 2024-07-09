@@ -1,0 +1,57 @@
+	.botao1 { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold}
+	.defaultsmall { font-family: Arial, Helvetica, sans-serif; font-size: 12px}
+	.ErrMsg { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; color: red; font-weight: bold }
+	.FieldLabel { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; color: #336899; font-weight: bold }
+	.collTitle { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #b0e0e6}
+	.bigTitle { font-family: Arial, Helvetica, sans-serif; font-size: 80px; font-weight: bold; color: #b0e0e6}
+
+	A:link { font-family: Arial, Helvetica, sans-serif; text-decoration : none; }
+	A:visited { font-family: Arial, Helvetica, sans-serif; text-decoration : none; }
+	A:active { font-family: Arial, Helvetica, sans-serif; text-decoration : none; }
+	A:hover { font-family: Arial, Helvetica, sans-serif; text-decoration : underline }
+
+    .CORPO { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 8pt }
+    .CORPO1 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 1pt }
+    .CORPO2 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 2pt }
+    .CORPO3 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 3pt }
+    .CORPO4 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 4pt }
+    .CORPO5 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 5pt }
+    .CORPO6 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 6pt }
+    .CORPO7 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 7pt }
+    .CORPO8 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 8pt }
+    .CORPO9 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 9pt }
+    .CORPO10 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 10pt }
+    .CORPO11 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 11pt }
+    .CORPO12 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 12pt }
+    .CORPO13 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 13pt }
+    .CORPO14 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 14pt }
+    .CORPO15 { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 15pt }
+
+    .Corpo7Bold { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 7pt; FONT-WEIGHT: BOLD }
+    .Corpo8Bold { COLOR: black; FONT-FAMILY: Verdana; FONT-SIZE: 8pt; FONT-WEIGHT: BOLD }
+
+    .titulo {
+             background-color: #aaaaaa;
+             color: black;
+             font-family: verdana, arial, helvetica, sans-serif;
+             font-size: 12px;
+             font-weight: bold;
+             text-align: center
+            }
+
+	table.comDegradeCinza {
+		border-collapse: collapse; /* CSS2 */
+		background: #FFFFF0;
+		background-image:url(imagens/bgOFF.gif)
+	}
+	
+	table.comDegradeCinza tbody{
+		border-collapse: collapse; /* CSS2 */
+		background: #FFFFFF;
+		
+	}	
+		table.comDegradeCinza thead{
+		border-collapse: collapse; /* CSS2 */
+		background-image:url(imagens/bgOFF.gif)
+		
+	}	

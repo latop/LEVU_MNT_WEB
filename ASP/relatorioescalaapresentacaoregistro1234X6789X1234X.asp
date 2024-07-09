@@ -1,0 +1,420 @@
+-<%@ Language=VBScript %>
+ -<!--#include file="header.asp"-->
+ -<%Response.Expires = 0%>
+ -<%Response.Buffer = True%>
+ -<!--#include file="libgeral.asp"-->
+ -
+ -<html>
+ -
+ -<head>
+ -	<title>Apresenta&#231;&#227;o de Tripulantes</title>
+ -	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+ -	<meta http-equiv="Page-Exit" content="blendTrans(Duration=1)" />
+ -	<script language="javascript" type="text/javascript">
+ -		function CarregaPagina() {
+ -			document.getElementById('txtSenha').focus();
+ -		}
+ -
+ -		function VerificaCampos() {
+ -			if (document.getElementById('txtSenha').value == '') {
+ -				alert('Preencha o campo senha, por favor!');
+ -				document.getElementById('txtSenha').focus();
+ -				return false;
+ -			}
+ -			else {
+ -				return confirm('Corfirma a apresentação do tripulante?');
+ -			}
+ -		}
+ -	</script>
+ -</head>
+ -
+ -<body onload="javascript:CarregaPagina();">
+ -<%
+ -	Dim strConfirmar, strVoltar
+ -	strConfirmar = Request.Form("btnConfirmar")
+ -	strVoltar = Request.Form("btnVoltar")
+ -
+ -	Dim intSeqJornada
+ -	intSeqJornada = Request.QueryString("seqjornada")
+ -
+ -	Dim objConn
+ -	Set objConn = CreateObject("ADODB.CONNECTION")
+ -	objConn.Open(StringConexaoSqlServer)
+ -	objConn.Execute("SET DATEFORMAT ymd")
+ -
+ -	If (Not IsVazio(strVoltar)) Then
+ -		Response.Redirect("relatorioescalaapresentacao" & ObterComplementoNomeArquivo() & ".asp")
+ -	ElseIf (Not IsVazio(strConfirmar)) Then
+ -		intSeqJornada = Request.Form("hidSeqJornada")
+ -		If (IsVazio(intSeqJornada)) Then
+ -			objConn.Close()
+ -			Set objConn = Nothing
+ -			Response.Write("<p class='errmsg' align='center'>Ocorreu um erro inesperado no sistema. [" & intSeqJornada & "]<br />Verifique esse problema com o administrador do sistema, por favor!</p>")
+ -			Response.End()
+ -		End If
+ -		intSeqJornada = CLng(intSeqJornada)
+ -
+ -		Dim strSenha
+ -		strSenha = Request.Form("txtSenha")
+ -
+ -		If (IsVazio(strSenha)) Then
+ -			Response.Write("<p class='errmsg' align='center'>Senha inv&#225;lida.<br />Verifique e tente novamente, por favor!</p>")
+ -		Else
+ -			Dim strSenhaEncriptada
+ -			strSenhaEncriptada = fnEncriptaSenha(strSenha)
+ -
+ -			' ****************************************
+ -			' *** Verifica se a senha está correta ***
+ -			' ****************************************
+ -			Dim strQuerySenha
+ -			strQuerySenha =                 " SELECT ST.seqtripulante "
+ -			strQuerySenha = strQuerySenha & " FROM sig_tripulante ST, sig_jornada SJ "
+ -			strQuerySenha = strQuerySenha & " WHERE ST.seqtripulante = SJ.seqtripulante "
+ -			strQuerySenha = strQuerySenha & "   AND SJ.seqjornada = " & intSeqJornada
+ -			strQuerySenha = strQuerySenha & "   AND ST.senha = " & Plic(strSenhaEncriptada) & " "
+ -
+ -			Dim objRsSenha
+ -			Set objRsSenha = Server.CreateObject("ADODB.Recordset")
+ -			objRsSenha.Open strQuerySenha, objConn
+ -
+ -			If (objRsSenha.EOF) Then
+ -				Response.Write("<p class='errmsg' align='center'>Senha inv&#225;lida.<br />Verifique e tente novamente, por favor!</p>")
+ -			Else
+ -				' *************************
+ -				' *** HORA APRESENTAÇÃO ***
+ -				' *************************
+ -				Dim strQueryHrApresent
+ -				strQueryHrApresent =                      " SELECT SJ.dthrapresentacao, "
+ -				strQueryHrApresent = strQueryHrApresent & "        GETDATE() AGORA "
+ -				strQueryHrApresent = strQueryHrApresent & "   FROM sig_jornada SJ "
+ -				strQueryHrApresent = strQueryHrApresent & "  WHERE SJ.seqjornada = " & intSeqJornada
+ -
+ -				Dim objRsHrApresent
+ -				Set objRsHrApresent = Server.CreateObject("ADODB.Recordset")
+ -				objRsHrApresent.Open strQueryHrApresent, objConn
+ -
+ -				Dim strHrApresentacao, strAgora
+ -				strHrApresentacao = objRsHrApresent("dthrapresentacao")
+ -				strAgora = objRsHrApresent("AGORA")
+ -
+ -				objRsHrApresent.Close()
+ -				Set objRsHrApresent = Nothing
+ -
+ -				Dim dtHrApresentacao, dtAgora, blnUtilizarHorarioPrevisto
+ -				blnUtilizarHorarioPrevisto = false
+ -				if (IsDate(strHrApresentacao) And IsDate(strAgora)) then
+ -					dtHrApresentacao = CDate(strHrApresentacao)
+ -					dtAgora = CDate(strAgora)
+ -					if (dtAgora < dtHrApresentacao) then
+ -						blnUtilizarHorarioPrevisto = true
+ -						Dim int_Empresa
+ -						int_Empresa = Session("Empresa")
+ -						If (int_Empresa <> "4") Then
+ -							Dim strHrApresentFormatada
+ -							strHrApresentFormatada = Right("00"&Day(dtHrApresentacao),2) & "/" & Right("00"&Month(dtHrApresentacao),2) & "/" & Year(dtHrApresentacao) & " "
+ -							strHrApresentFormatada = strHrApresentFormatada & FormatDateTime( dtHrApresentacao, 4 )
+ -							ExibeMensagemJS("O horário de apresentação é anterior ao previsto. Será considerado o horário previsto [" & strHrApresentFormatada & "].")
+ -						End If
+ -					end if
+ -				end if
+ -
+ -				Dim strQueryUpdate
+ -				strQueryUpdate =                  " UPDATE sig_jornada "
+ -				if (blnUtilizarHorarioPrevisto) then
+ -					strQueryUpdate = strQueryUpdate & " SET dthrapresentacaorealiz = dthrapresentacao "
+ -				else
+ -					strQueryUpdate = strQueryUpdate & " SET dthrapresentacaorealiz = getdate() "
+ -				end if
+ -				strQueryUpdate = strQueryUpdate & " WHERE seqjornada = " & intSeqJornada
+ -
+ -				Dim objConexaoSqlServerUpdate
+ -				Set objConexaoSqlServerUpdate = Server.CreateObject ("ADODB.Connection")
+ -				objConexaoSqlServerUpdate.Open(StringConexaoSqlServerUpdateEncriptado)
+ -				objConexaoSqlServerUpdate.Execute(strQueryUpdate)
+ -
+ -				objConexaoSqlServerUpdate.Close()
+ -				Set objConexaoSqlServerUpdate = Nothing
+ -
+ -				Call ExibeMensagemJS("Operação efetuada com sucesso!")
+ -				Call RedirectJS("relatorioescalaapresentacao" & ObterComplementoNomeArquivo() & ".asp")
+ -
+ -			End If
+ -
+ -			Set objRsSenha = Nothing
+ -
+ -		End If
+ -	End If
+ -
+ -	If (IsVazio(intSeqJornada)) Then
+ -		objConn.Close()
+ -		Set objConn = Nothing
+ -		Response.Write("<p class='errmsg' align='center'>Acesso negado.[" & intSeqJornada & "]</p>")
+ -		Response.End()
+ -	End If
+ -	intSeqJornada = CLng(intSeqJornada)
+ -
+ -	' ******************
+ -	' *** TRIPULANTE ***
+ -	' ******************
+ -	Dim strQueryTrip
+ -	strQueryTrip =                " SELECT ST.seqtripulante, "
+ -	strQueryTrip = strQueryTrip & "        ST.nomeguerra, "
+ -	strQueryTrip = strQueryTrip & "        SJ.textojornada, "
+ -	strQueryTrip = strQueryTrip & "        SJ.dthrapresentacao, "
+ -	strQueryTrip = strQueryTrip & "        SJ.dthrapresentacaorealiz "
+ -	strQueryTrip = strQueryTrip & "   FROM sig_tripulante ST, "
+ -	strQueryTrip = strQueryTrip & "        sig_jornada SJ "
+ -	strQueryTrip = strQueryTrip & "  WHERE ST.seqtripulante = SJ.seqtripulante "
+ -	strQueryTrip = strQueryTrip & "    AND SJ.seqjornada = " & intSeqJornada
+ -
+ -	Dim objRsTrip
+ -	Set objRsTrip = Server.CreateObject("ADODB.Recordset")
+ -
+ -	objRsTrip.Open strQueryTrip, objConn
+ -
+ -	Dim seqTripulante
+ -	seqTripulante = objRsTrip("seqtripulante")
+ -
+ -	' ****************
+ -	' *** CARTEIRA ***
+ -	' ****************
+ -	Dim strQueryCarteira
+ -	strQueryCarteira =                    " SELECT TC.seqtripulante, "
+ -	strQueryCarteira = strQueryCarteira & "        TC.codcarteira, "
+ -	strQueryCarteira = strQueryCarteira & "        TC.dtinivalidade, "
+ -	strQueryCarteira = strQueryCarteira & "        TC.dtfimvalidade, "
+ -	strQueryCarteira = strQueryCarteira & "        TC.dtprorrogacao "
+ -	strQueryCarteira = strQueryCarteira & " FROM sig_tripcarteira TC "
+ -	strQueryCarteira = strQueryCarteira & " WHERE TC.seqtripulante = " & seqTripulante
+ -	'strQueryCarteira = strQueryCarteira & "   AND TC.dtinivalidade <= GETDATE() "
+ -	'strQueryCarteira = strQueryCarteira & "   AND (TC.dtfimvalidade IS NULL OR TC.dtfimvalidade >= GETDATE()) "
+ -
+ -	Dim objRsCarteira
+ -	Set objRsCarteira = Server.CreateObject("ADODB.Recordset")
+ -	objRsCarteira.Open strQueryCarteira, objConn
+ -
+ -%>
+ -<center>
+ -	<table width="98%" border="0" cellpadding="0" cellspacing="0" id="Table1">
+ -		<tr>
+ -			<td class="corpo" align="left" valign="top" width="35%">
+ -				<img src="imagens/logo_empresa.gif" border="0" />
+ -			</td>
+ -			<td class="corpo" align="center" width="30%" rowspan="2">
+ -				<font size="4"><b>
+ -					&nbsp;Apresenta&#231;&#227;o de Tripulantes
+ -				</b></font>
+ -			</td>
+ -			<td class="corpo" align="right" valign="top" width="35%">
+ -				<a href="http://www.latop.com.br"><img src="imagens/sigla.gif" border="0" /></a>
+ -			</td>
+ -		</tr>
+ -	</table>
+ -</center>
+ -<br />
+ -<br />
+ -<br />
+ -<center>
+ -	<table width="98%" border="1" cellspacing="1" id="Table2">
+ -		<tr>
+ -			<td align="right" valign="middle" width="10%">Tripulante:</td>
+ -			<td align="left" valign="middle" width="40%"><%=objRsTrip("nomeguerra")%>&nbsp;</td>
+ -		</tr>
+ -		<tr>
+ -			<td align="right" valign="middle" width="10%">Programação:</td>
+ -			<td align="left" valign="middle" width="40%"><%=objRsTrip("textojornada")%>&nbsp;</td>
+ -		</tr>
+ -		<tr>
+ -			<td align="right" valign="middle" width="10%">Apresentação:</td>
+ -			<td align="left" valign="middle" width="40%"><%=objRsTrip("dthrapresentacao")%>&nbsp;</td>
+ -		</tr>
+ -		<tr>
+ -			<td align="right" valign="middle" width="10%">Apresentação Realiz.:</td>
+ -			<td align="left" valign="middle" width="40%"><%=objRsTrip("dthrapresentacaorealiz")%>&nbsp;</td>
+ -		</tr>
+ -	</table>
+ -	<br />
+ -	<table border='1' cellpadding='0' align="center" cellspacing='0'>
+ -		<thead>
+ -			<tr bgcolor='#AAAAAA'>
+ -				<th class="CORPO9" nowrap="nowrap" style="white-space: nowrap; width: 140px;">Carteira</th>
+ -				<th class="CORPO9" nowrap="nowrap" style="white-space: nowrap; width: 125px;">In&iacute;cio Validade</th>
+ -				<th class="CORPO9" nowrap="nowrap" style="white-space: nowrap; width: 125px;">Fim Validade</th>
+ -				<th class="CORPO9" nowrap="nowrap" style="white-space: nowrap; width: 125px;">Prorroga&ccedil;&atilde;o</th>
+ -			</tr>
+ -		</thead>
+ -		<tbody>
+ -<%
+ -	Do While Not objRsCarteira.EOF
+ -		Dim codCarteira, dtIniValidade, dtFimValidade, dtProrrogacao
+ -		codCarteira = objRsCarteira("codcarteira")
+ -		dtIniValidade = objRsCarteira("dtinivalidade")
+ -		dtFimValidade = objRsCarteira("dtfimvalidade")
+ -		dtProrrogacao = objRsCarteira("dtprorrogacao")
+ -		Dim corFundoLinha, corTexto, verde, vermelho, amarelo, branco, preto
+ -		verde = "#90EE90"
+ -		vermelho = "#FF0000"
+ -		amarelo = "#FFFF7F"
+ -		branco = "#FFFFFF"
+ -		preto = "#000000"
+ -		corFundoLinha = branco
+ -		corTexto = preto
+ -		If (Not IsVazio(dtIniValidade)) Then
+ -			If (CDate(dtIniValidade) > Now()) Then
+ -				corFundoLinha = vermelho
+ -				corTexto = branco
+ -			ElseIf (IsVazio(dtFimValidade)) Then
+ -				corFundoLinha = verde
+ -			ElseIf (CDate(dtFimValidade) < Now()) Then
+ -				corFundoLinha = vermelho
+ -				corTexto = branco
+ -			ElseIf (DateDiff("d", Now(), CDate(dtFimValidade)) <= 30) Then
+ -				corFundoLinha = amarelo
+ -			Else
+ -				corFundoLinha = verde
+ -			End If
+ -		Else
+ -			corFundoLinha = vermelho
+ -			corTexto = branco
+ -		End If
+ -%>
+ -			<tr style='background-color:<%=corFundoLinha%>;'>
+ -				<td class='CORPO8' nowrap="nowrap" style="color:<%=corTexto%>; text-align: center; white-space: nowrap;"><%=codCarteira%>&nbsp;</td>
+ -				<td class='CORPO8' nowrap="nowrap" style="color:<%=corTexto%>; text-align: center; white-space: nowrap;"><%=dtIniValidade%>&nbsp;</td>
+ -				<td class='CORPO8' nowrap="nowrap" style="color:<%=corTexto%>; text-align: center; white-space: nowrap;"><%=dtFimValidade%>&nbsp;</td>
+ -				<td class='CORPO8' nowrap="nowrap" style="color:<%=corTexto%>; text-align: center; white-space: nowrap;"><%=dtProrrogacao%>&nbsp;</td>
+ -			</tr>
+ -<%
+ -		objRsCarteira.MoveNext()
+ -	Loop
+ -%>
+ -			<tr>
+ -				<th colspan='4'></th>
+ -			</tr>
+ -		</tbody>
+ -	</table>
+ -	<form action="relatorioescalaapresentacaoregistro<%=ObterComplementoNomeArquivo()%>.asp" method="post" id="form1" name="form1">
+ -		<input type="hidden" name='hidSeqJornada' id='hidSeqJornada' value='<%=intSeqJornada%>' />
+ -		<table id="Table3">
+ -			<tr>
+ -				<td class="fieldlabel" align="right" width="20%">Senha:</td>
+ -				<td align="left" width="80%">
+ -					<input type="password" id="txtSenha" name="txtSenha" class="defaultsmall" size="20" maxlength="20" />
+ -				</td>
+ -			</tr>
+ -			<tr>
+ -				<td width="100%" colspan="3" align="center">
+ -					<input type="submit" id="btnConfirmar" name="btnConfirmar" value="Confirmar" class="botao1" onclick="javascript:return VerificaCampos();" style="WIDTH: 80px; HEIGHT: 25px" />
+ -					<input type="submit" id="btnVoltar" name="btnVoltar" value="Voltar" class="botao1" style="WIDTH: 80px; HEIGHT: 25px" />
+ -				</td>
+ -			</tr>
+ -		</table>
+ -		<input type="text" style="display:none; visibility:hidden;" />
+ -	</form>
+ -
+ -</center>
+ -
+ -</body>
+ -
+ -</html>
+ -
+ -<%
+ -	objRsTrip.Close()
+ -	Set objRsTrip = Nothing
+ -
+ -	objRsCarteira.Close()
+ -	Set objRsCarteira = Nothing
+ -
+ -	objConn.Close()
+ -	Set objConn = Nothing
+ -
+ -
+ -
+ -	Function ObterNomeArquivo()
+ -
+ -		Dim strCaminho
+ -		' Caminho virtual do arquivo
+ -		strCaminho = Request.ServerVariables("SCRIPT_NAME")
+ -
+ -		Dim arrCaminho
+ -		arrCaminho = Split(strCaminho, "/")
+ -
+ -		' O nome do arquivo é o último item do array
+ -		ObterNomeArquivo = arrCaminho(UBound(arrCaminho,1))
+ -
+ -	End Function
+ -
+ -	' **************************************************
+ -	' ***   O CODIATA DO AEROPORTO É FORMADO PELAS   ***
+ -	' ***   LETRAS QUE SE ENCONTRAM NAS POSIÇÕES     ***
+ -	' ***   5, 10 E 15 DO NOME DO ARQUIVO, APÓS      ***
+ -	' ***   "relatorioescalaapresentacaoregistro"    ***
+ -	' **************************************************
+ -	Function ObterCodIata()
+ -
+ -		Dim strNomeArquivo
+ -		strNomeArquivo = ObterNomeArquivo()
+ -		strNomeArquivo = Replace(strNomeArquivo, "relatorioescalaapresentacaoregistro", "")
+ -
+ -		Dim strCodIata
+ -		strCodIata = Mid(strNomeArquivo, 5, 1) & Mid(strNomeArquivo, 10, 1) & Mid(strNomeArquivo, 15, 1)
+ -		strCodIata = UCase(strCodIata)
+ -
+ -		ObterCodIata = strCodIata
+ -
+ -	End Function
+ -
+ -	Function ObterComplementoNomeArquivo()
+ -
+ -		Dim strNomeArquivo
+ -		strNomeArquivo = ObterNomeArquivo()
+ -		strNomeArquivo = Replace(strNomeArquivo, "relatorioescalaapresentacaoregistro", "")
+ -		strNomeArquivo = Replace(strNomeArquivo, ".asp", "")
+ -
+ -		ObterComplementoNomeArquivo = strNomeArquivo
+ -
+ -	End Function
+ -
+ -	Function IsVazio(var)
+ -
+ -		If (IsEmpty(var) Or IsNull(var) Or (Trim(var) = "")) Then
+ -			IsVazio = True
+ -		Else
+ -			IsVazio = False
+ -		End If
+ -
+ -	End Function
+ -
+ -	Sub ExibeMensagemJS(mensagem)
+ -
+ -		Response.Write(" <script language='javascript' type='text/javascript'> ")
+ -		Response.Write("	alert(' " & mensagem & " '); ")
+ -		Response.Write(" </script> ")
+ -
+ -	End Sub
+ -
+ -	Sub RedirectJS(target)
+ -
+ -		Response.Write(" <script language='javascript' type='text/javascript'> ")
+ -		Response.Write("	document.location.href ='" & target & "'; ")
+ -		Response.Write(" </script> ")
+ -
+ -	End Sub
+ -
+ -	Function ObterCorFundoLinha(intNumLinha)
+ -
+ -		Dim Cor1, Cor2, Cor
+ -		Cor1 = "#FFFFFF"
+ -		Cor2 = "#EEEEEE"
+ -
+ -		If ((intNumLinha MOD 2) = 0) Then
+ -			Cor = Cor1
+ -		Else
+ -			Cor = Cor2
+ -		End If
+ -
+ -		ObterCorFundoLinha = Cor
+ -
+ -	End Function
+ -
+ -%>

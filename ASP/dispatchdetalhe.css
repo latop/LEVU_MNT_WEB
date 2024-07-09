@@ -1,0 +1,214 @@
+/*
+CSS for dispatchdetalhe.asp
+*/
+
+body
+{
+	margin-left: 0;
+}
+
+ul#tabs
+{
+	list-style-type: none;
+	margin: 20px 0 0 20px;
+	padding: 0 0 0.3em 0;
+	font-size: 8pt;
+	font-family: Verdana, Arial, Sans-Serif;
+	white-space: nowrap;
+}
+
+ul#tabs li
+{
+	display: inline;
+}
+
+ul#tabs li a
+{
+	color: #42454a;
+	background-color: #dedbde;
+	border: 1px solid #c9c3ba;
+	border-bottom: none;
+	padding: 0.3em;
+	text-decoration: none;
+}
+
+ul#tabs li a:hover
+{
+	background-color: #fffafa;
+}
+
+ul#tabs li a.selected
+{
+	color: #000;
+	background-color: #fffafa;
+	font-weight: bold;
+	padding: 0.7em 0.3em 0.38em 0.3em;
+}
+
+div.tabContent
+{
+	border: 1px solid #c9c3ba;
+	margin: 0 0 0 10px;
+	padding: 0.5em;
+	background-color: #fffafa;
+	min-width: 750px;
+}
+
+div.hide
+{
+	display: none;
+}
+
+table.tblCarregamentoPoroes
+{
+	border-collapse: collapse;
+}
+
+#coluna1, #coluna4
+{
+	width: 45%;
+	padding: 0;
+}
+
+#coluna2, #coluna3
+{
+	width: 5%;
+}
+
+#coluna2
+{
+	border-right: 1px dashed #000000;
+}
+
+#coluna1 table, #coluna4 table
+{
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.tblInterna
+{
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 7pt;
+}
+
+.tblInterna td, .tblInterna th
+{
+	border: 1px solid #000000;
+	padding: 2px;
+	text-align:center;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+.destaque, td.destaque, th.destaque
+{
+	font-weight: bold;
+}
+
+.letrasPequenas
+{
+	font-size: 5pt;
+}
+
+.letrasMedias
+{
+	font-size: 6pt;
+}
+
+td.ultimaLinha
+{
+	border-bottom: 0;
+}
+
+td.alturaFixa
+{
+	height: 30px;
+}
+
+td.larguraFixa5Col, th.larguraFixa5Col
+{
+	width: 20%;
+}
+
+td.larguraFixa4Col, th.larguraFixa4Col
+{
+	width: 25%;
+}
+
+td.portas
+{
+	border-top: 0;
+	padding: 0;
+}
+
+td.portas div
+{
+	width: 75%;
+	border: 1px solid #000000;
+	border-bottom: 0;
+	margin-left: 12.5%;
+}
+
+td.instrucoes
+{
+	width: 50%;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+td.assinatura
+{
+	height: 30px;
+	border-bottom: 0;
+}
+
+td.continuaAssinatura
+{
+	border-top: 0;
+}
+
+#planovoo
+{
+	padding: 0 10px 0px 30px;
+}
+
+#planovoo p
+{
+	font-family: "Courier New", Monospace;
+	font-size: 8pt;
+	padding: 0 0 0 10px;
+	margin: 0;
+}
+
+#planovoo h2
+{
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 12pt;
+	margin: 20px 0 0 160px;
+	white-space: nowrap;
+	text-decoration: underline;
+}
+
+.tabelaComBordas
+{
+	border-width: 1px;
+	border-spacing: 0px;
+	border-style: solid;
+	border-color: black;
+	border-collapse: collapse;
+	background-color: white;
+}
+
+.tabelaComBordas td
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+}
+
+.tabelaComBordas table
+{
+	border-collapse: collapse;
+}
